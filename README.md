@@ -1,3 +1,3 @@
 # javascript
-CS20 js assignments
+CS20 assigments for JavaScript unit
 # javascript
