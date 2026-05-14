@@ -10,11 +10,14 @@
     
     
     <script>
-       let array = [item1, item2, item3, item4]
-            let array[0] = window.prompt("prompt");
+       let array = [];
+       array[0] = window.prompt("Enter item 1:");
+       array[1] = window.prompt("Enter item 2:");
+       array[2] = window.prompt("Enter item 3:");
+       array[3] = window.prompt("Enter item 4:");
 
-      
-            document.write(array[])
+       document.write("Array values: " + array + "<br>");
+       document.write("Array length: " + array.length);
     </script>
 
 </body>
