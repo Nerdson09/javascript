@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CTC 1</title>
+    <script> //functions for the buttons and checkbox
+        function event1(){
+            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+        }
+        function event2(){
+            window.alert("You clicked the button!!");
+        }
+        function event3(){
+            window.alert("You Clicked the button twice!!");
+        }
+        function event4(){
+            window.location.href = "https://www.lttstore.ca";
+        }
+        function message1(){
+            window.alert(document.getElementById("input1").value);
+        }
+        function event5(){
+            window.alert("You Checked this box!!");
+        }
+    </script>
+</head>
+<body style="background-color: cornflowerblue;">
+    <div style="font-size: large; font-family:'comic sans ms', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 1000; color: white; font-size: 40px; text-align: center;">
+
+        <input type="button" value="Never Click Me" ondblclick="event1()">
+        <input type="button" value="Click Me" onclick="event2()">
+        <input type="button" value="Double Click Me" ondblclick="event3()">
+        <input type="button" value="LTT Store" onclick="event4()">
+        <input type="checkbox" id="checkbox1" onclick="event5()">
+        
+         <form id="form1"> 
+        <input type="text" id="input1"> 
+        <input type="button" id="button1" value="Enter" onclick="message1(this.form)" >
+        </form>
+    </div>
+</body>
+</html>
