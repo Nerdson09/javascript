@@ -21,14 +21,16 @@
             window.alert(document.getElementById("input1").value);
         }
         function event5(){
-            window.alert("You Checked this box!!"); 
+            window.alert("You Checked this box!! All changes will be reset"); 
+            location.reload();
         }
         function event6(){
-           document.getElementById("p2").style.color = "black"; 
-        }
-        function event7(){
-            document.getElementById("p1").style.backgroundImage = "url('penguin.jpg')";
-             document.getElementById("p2").style
+            document.body.style.backgroundImage = "url('penguin.jpg')", document.body.style.backgroundSize = "cover";
+            document.getElementById("p2").style.color = "grey"; 
+            document.title = "Properties";
+            document.getElementById("p2").style.fontSize = "90px";
+            
+            
         }
         
     </script> </div>
@@ -40,14 +42,17 @@
         <input type="button" value="Click Me" onclick="event2()">
         <input type="button" value="Double Click Me" ondblclick="event3()">
         <input type="button" value="LTT Store" onclick="event4()">
-        <input type="checkbox" id="checkbox1" onclick="event5()">
-        <input type="button" value="Change Text Color" onclick="event6()">
-        <input type="button" value="Penguin" onclick="event7()">
-         <form id="form1"> 
+        <input type="button" value="properties" onclick="event6()">
+        
+        </form></h1>
+        
+        <div id="checkbox" style="font-size: 20px;">
+Reset changes -> <input type="checkbox" id="checkbox1" value="reset changes" onclick="event5()">
+</div>       
+ <form id="form1"> 
              <div id="p2"> Text Input </div>
         <input type="text" id="input1"> 
         <input type="button" id="button1" value="Enter" onclick="message1(this.form)" >
-        </form></h1>
     
 </body>
 </html>
