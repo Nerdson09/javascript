@@ -2,35 +2,33 @@
 <html style="font-size: large; font-family:'comic sans ms', Tahoma, Geneva, Verdana, sans-serif;
             font-weight: 1000; color: white; font-size: 40px; text-align: center;"></html>
 <head>
-    <title>CTC 1</title>
+    <title>CTC 2</title>
       <div id="p1">
     <script> //functions for the buttons and checkbox
-        function event1(){
+        function event1(){ //redirect for rickroll button
             window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
         }
-        function event2(){
+        function event2(){ //single click function
             window.alert("You clicked the button!!");
         }
-        function event3(){
+        function event3(){//double click function 
             window.alert("You Clicked the button twice!!");
         }
-        function event4(){
+        function event4(){//Linus Tech Tips store button
             window.location.href = "https://www.lttstore.ca";
         }
-        function message1(){
+        function message1(){//text box
             window.alert(document.getElementById("input1").value);
         }
         function event5(){
-            window.alert("You Checked this box!! All changes will be reset"); 
-            location.reload();
+            window.alert("You Checked this box!!"); 
         }
         function event6(){
-            document.body.style.backgroundImage = "url('penguin.jpg')", document.body.style.backgroundSize = "cover";
-            document.getElementById("p2").style.color = "grey"; 
-            document.title = "Properties";
-            document.getElementById("p2").style.fontSize = "90px";
-            
-            
+           document.getElementById("p2").style.color = "black"; 
+        }
+        function event7(){
+            document.getElementById("p1").style.backgroundImage = "url('penguin.jpg')";
+             document.getElementById("p2").style
         }
         
     </script> </div>
@@ -42,17 +40,14 @@
         <input type="button" value="Click Me" onclick="event2()">
         <input type="button" value="Double Click Me" ondblclick="event3()">
         <input type="button" value="LTT Store" onclick="event4()">
-        <input type="button" value="properties" onclick="event6()">
-        
-        </form></h1>
-        
-        <div id="checkbox" style="font-size: 20px;">
-Reset changes -> <input type="checkbox" id="checkbox1" value="reset changes" onclick="event5()">
-</div>       
- <form id="form1"> 
+        <input type="checkbox" id="checkbox1" onclick="event5()">
+        <input type="button" value="Change Text Color" onclick="event6()">
+        <input type="button" value="Penguin" onclick="event7()">
+         <form id="form1"> 
              <div id="p2"> Text Input </div>
         <input type="text" id="input1"> 
         <input type="button" id="button1" value="Enter" onclick="message1(this.form)" >
+        </form></h1>
     
 </body>
 </html>
