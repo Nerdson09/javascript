@@ -5,38 +5,38 @@
     <title>CTC 2</title>
       <div id="p1">
     <script> //functions for the buttons and checkbox
-        function event1(){
+        function event1(){ //redirect for rickroll button
             window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
         }
-        function event2(){
+        function event2(){ //single click function
             window.alert("You clicked the button!!");
         }
-        function event3(){
+        function event3(){//double click function 
             window.alert("You Clicked the button twice!!");
         }
-        function event4(){
+        function event4(){//Linus Tech Tips store button
             window.location.href = "https://www.lttstore.ca";
         }
-        function message1(){
+        function message1(){//text box
             window.alert(document.getElementById("input1").value);
         }
-        function event5(){
+        function event5(){//checkbox function
             window.alert("You Checked this box!! "); 
             
         }
-        function event6(){
+        function event6(){ //all functions for the properties button
             document.body.style.backgroundImage = "url('penguin.jpg')", document.body.style.backgroundSize = "cover";
             document.getElementById("p2").style.color = "grey"; 
             document.title = "Properties";
             document.getElementById("p2").style.fontSize = "90px";
               
-        }
+        } //reloads the page to reset the properties
         function event7(){
             location.reload();
         }
         
     </script> </div>
-    </head>
+    </head> <!--inputs for functions-->
         <body style="background-color: cornflowerblue;">
             <input type="button" value="Never Click Me" onclick="event1()">
             <input type="button" value="Click Me" onclick="event2()">
@@ -45,9 +45,9 @@
             <input type="button" value="properties" onclick="event6()">
             <input type="button" value="Reset Properties" onclick="event7()">
         
-        <div id="checkbox" style="font-size: 20px;">
+        <div id="checkbox" style="font-size: 20px"></div> <!--checkbox for reset changes-->
 Reset changes -> <input type="checkbox" id="checkbox1" value="reset changes" onclick="event5()">
-</div>       
+       
  <form id="form1"> 
              <div id="p2"> Text Input </div>
         <input type="text" id="input1"> 
