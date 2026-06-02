@@ -20,34 +20,39 @@
         function message1(){//text box
             window.alert(document.getElementById("input1").value);
         }
-        function event5(){
-            window.alert("You Checked this box!!"); 
+        function event5(){//checkbox function
+            window.alert("You Checked this box!! "); 
+            
         }
-        function event6(){
-           document.getElementById("p2").style.color = "black"; 
-        }
+        function event6(){ //all functions for the properties button
+            document.body.style.backgroundImage = "url('penguin.jpg')", document.body.style.backgroundSize = "cover"; //changes the background to a penguin
+            document.getElementById("p2").style.color = "grey"; //changes the color of the text
+            document.title = "Properties"; //changes the title of the page
+            document.getElementById("p2").style.fontSize = "900px"; //makes the text freaking massive
+            document.body.style.zoom = "35%"; //zooms out the page to fit the massive text
+              
+        } //reloads the page to reset the properties
         function event7(){
-            document.getElementById("p1").style.backgroundImage = "url('penguin.jpg')";
-             document.getElementById("p2").style
+            location.reload();
         }
         
     </script> </div>
-</head>
-<body style="background-color: cornflowerblue;">
-  
-
-        <input type="button" value="Never Click Me" onclick="event1()">
-        <input type="button" value="Click Me" onclick="event2()">
-        <input type="button" value="Double Click Me" ondblclick="event3()">
-        <input type="button" value="LTT Store" onclick="event4()">
-        <input type="checkbox" id="checkbox1" onclick="event5()">
-        <input type="button" value="Change Text Color" onclick="event6()">
-        <input type="button" value="Penguin" onclick="event7()">
-         <form id="form1"> 
+    </head> <!--inputs for functions-->
+        <body style="background-color: cornflowerblue;">
+            <input type="button" value="Never Click Me" onclick="event1()">
+            <input type="button" value="Click Me" onclick="event2()">
+            <input type="button" value="Double Click Me" ondblclick="event3()">
+            <input type="button" value="LTT Store" onclick="event4()">
+            <input type="button" value="properties" onclick="event6()">
+            <input type="button" value="Reset Properties" onclick="event7()">
+        
+         <!--checkbox for reset changes-->
+    <input type="checkbox" id="checkbox1" value="reset changes" onclick="event5()">
+       
+ <form id="form1"> 
              <div id="p2"> Text Input </div>
         <input type="text" id="input1"> 
         <input type="button" id="button1" value="Enter" onclick="message1(this.form)" >
-        </form></h1>
-    
+     </form>
 </body>
 </html>
