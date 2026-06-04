@@ -4,11 +4,11 @@
     <title>Random Number Generator Game</title>
 </head>
 <body style="background-color: cornflowerblue; font-family:'comic sans ms', Tahoma, Geneva, Verdana, sans-serif; font-weight: 1000; color: white; font-size: 40px; text-align: center;">
-    <script>
+    <script> // Prompt the user for minimum and maximum values
         let minValue = parseInt(window.prompt("Min number"), 10);
         let maxValue = parseInt(window.prompt("Max number"), 10);
 
-        while (isNaN(minValue)) {
+        while (isNaN(minValue)) { //min and max number validation
             minValue = parseInt(window.prompt("Enter a valid minimum number"), 10);
         }
 
@@ -16,10 +16,10 @@
             maxValue = parseInt(window.prompt("Enter a valid maximum number greater than " + minValue), 10);
         }
 
-        let randomNumber = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
+        let randomNumber = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue; // Generate a random number within the specified range
         let attempts = 0;
 
-        window.addEventListener("DOMContentLoaded", function () {
+        window.addEventListener("DOMContentLoaded", function () { 
             const guessInput = document.getElementById("guessInput");
             guessInput.min = minValue;
             guessInput.max = maxValue;
@@ -35,7 +35,7 @@
 
             attempts++;
 
-            if (userGuess === randomNumber) {
+            if (userGuess === randomNumber) { // Correct guess
                 alert("Congratulations! You've guessed the number in " + attempts + " attempts!");
                 location.reload();
             } else if (userGuess < randomNumber) {
@@ -45,7 +45,7 @@
             }
         }
 
-        function resetGame() {
+        function resetGame() { //reset the game
             randomNumber = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
             attempts = 0;
             document.getElementById("guessInput").value = "";
