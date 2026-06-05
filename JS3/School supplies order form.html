@@ -95,7 +95,39 @@
             let discountMessage = 'Is the 5$ discount applied?: No';
             let discountApplied = false;
 
-           
+            if (document.getElementById('sk').checked) {
+                afterTax = total * 1.11;
+                shippingMessage = 'Free Shipping';
+                taxMessage = '11% in Taxes';
+                if (afterTax > 30) {
+                    afterTax -= 5;
+                    discountApplied = true;
+                }
+            } else if (document.getElementById('ab').checked) {
+                afterTax = total * 1.05 + shipping;
+                shippingMessage = `${shipping.toFixed(2)}$ in Shipping`;
+                taxMessage = '5% in Taxes';
+            } else if (document.getElementById('mb').checked) {
+                afterTax = total * 1.13 + shipping;
+                shippingMessage = `${shipping.toFixed(2)}$ in Shipping`;
+                taxMessage = '13% in Taxes';
+            } else {
+                window.alert('Please select a location for shipping and taxes.');
+                document.getElementById('p2').innerText = '';
+                document.getElementById('p3').innerText = '';
+                document.getElementById('p4').innerText = 'Is the 5$ discount applied?: No';
+                document.getElementById('p5').innerText = 'No Province Selected';
+                return;
+            }
+
+            if (discountApplied) {
+                discountMessage = 'Is the 5$ discount applied?: Yes!';
+            }
+
+            document.getElementById('p2').innerText = `${afterTax.toFixed(2)}$ After Tax and Shipping`;
+            document.getElementById('p3').innerText = shippingMessage;
+            document.getElementById('p4').innerText = discountMessage;
+            document.getElementById('p5').innerText = taxMessage;
         }
     </script>
 </body>
