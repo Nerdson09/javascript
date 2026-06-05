@@ -24,7 +24,7 @@
 
                 parseFloat(document.getElementById("p1").innerHTML= Total + "$ Before Tax")
 
-                if(Pencils+ Pens+ Erasers == 0 || null){
+                if(Pencils + Pens + Erasers == 0 || null){
 
                     window.alert("You didn't Order Anything!")
                     
@@ -104,51 +104,18 @@
 
     </script>
       
+ <table>
 
-  
-    <form id="orderForm">
-       
-        <!-- The main form heading -->
-        <h1>What do you need?</h1>
-       
-        <!-- Items that people can order -->
-        <label for="pencils">Pencils (0.30 each):</label>
-        <input type="number" id="pencils" name="pencils" min="0" value="0">
-       
-        <br>
+        <tr>
+            <td>
+                
 
-        <label for="pens">Pens (0.50 each):</label>
-        <input type="number" id="pens" name="pens" min="0" value="0">
-       
-        <br>
+            </td>
 
-        <label for="erasers">Erasers (1.00 each):</label>
-       
-        <input type="number" id="erasers" name="erasers" min="0" value="0">
-       
-        <br>
-        <h2>What province are you in?</h2>
-       
-        <input type="radio" id="sk" name="province" value="Saskatchewan">
-        <label for="sk">Saskatchewan (11% tax, Free shippin!)</label>
-       
-        <br>
 
-        <input type="radio" id="ab" name="province" value="Alberta">
-        <label for="ab">Alberta (5% tax, $2 shipping)</label>
-       
-        <br>
 
-        <input type="radio" id="mb" name="province" value="Manitoba">
- <label for="mb">Manitoba (13% tax, $2 shipping)</label>
-       
-        <br>
+        </tr>
 
-        <button type="button" id="calculateBtn">Calculate My Order</button>
-   
-    </form>
 
-    
-</body>
-    </div>
-    </html>
+
+ </table>
