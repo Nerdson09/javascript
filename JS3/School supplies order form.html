@@ -1,121 +1,102 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>order form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <style>
+        body {
+            background-color: cornflowerblue;
+            font-family: 'Comic Sans MS', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            font-size: 20px;
+            text-align: left;
+            padding: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+        input[type="number"] {
+            width: 70px;
+        }
+        .summary p {
+            margin: 8px 0;
+        }
+        button {
+            margin-top: 16px;
+            padding: 10px 16px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        fieldset {
+            border: 1px solid white;
+            padding: 12px;
+            max-width: 420px;
+        }
+    </style>
 </head>
-<body style="background-color: cornflowerblue; font-family:'comic sans ms', Tahoma, Geneva, Verdana, sans-serif; font-weight: 1000; color: white; font-size: 20px; text-align: left;">
-
-
-
-  
+<body>
     <h1>Order Form</h1>
+    <p>Enter quantities and choose a province for shipping and taxes.</p>
+
+    <label>Pencils ($0.30 each):
+        <input id="pencils" type="number" min="0" value="0">
+    </label>
+    <label>Pens ($0.50 each):
+        <input id="pens" type="number" min="0" value="0">
+    </label>
+    <label>Erasers ($1.00 each):
+        <input id="erasers" type="number" min="0" value="0">
+    </label>
+
+    <fieldset>
+        <legend>Shipping location</legend>
+        <label><input type="radio" id="sk" name="province"> Saskatchewan (11% tax, free shipping)</label>
+        <label><input type="radio" id="ab" name="province"> Alberta (5% tax, $2 shipping)</label>
+        <label><input type="radio" id="mb" name="province"> Manitoba (13% tax, $2 shipping)</label>
+    </fieldset>
+
+    <button type="button" onclick="amount()">Calculate Total</button>
+
+    <section class="summary">
+        <h2>Order Summary</h2>
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+        <p id="p4"></p>
+        <p id="p5"></p>
+    </section>
 
     <script>
         function amount() {
+            const pencils = parseFloat(document.getElementById('pencils').value) || 0;
+            const pens = parseFloat(document.getElementById('pens').value) || 0;
+            const erasers = parseFloat(document.getElementById('erasers').value) || 0;
+            const shipping = 2;
 
-                let Pencils= parseFloat(document.getElementById("pencils").value * 0.30)
+            const total = pencils * 0.30 + pens * 0.50 + erasers * 1.00;
 
-                let Pens= parseFloat(document.getElementById("pens").value * 0.50)
-
-                let Erasers= parseFloat(document.getElementById("erasers").value * 1.00)
-
-                let Shipping= 2
-
-                let Total= Pencils + Pens + Erasers
-
-                parseFloat(document.getElementById("p1").innerHTML= Total + "$ Before Tax")
-
-                if(Pencils + Pens + Erasers == 0 || null){
-
-                    window.alert("You didn't Order Anything!")
-                    
-                    document.getElementById("p1").innerHTML= "Nothing was ordered"
-
-                    return
-                }
-
-
-                if (document.getElementById("sk").checked){
-
-                    let Aftertax= Total * 1.11
-
-                    document.getElementById("p2").innerHTML= Aftertax + "$ After Tax and Shipping"
-
-                    document.getElementById("p3").innerHTML= "Free Shipping"
-
-                    document.getElementById("p4").innerHTML= "Is the 5$ discount Applied?: No"
-
-                    document.getElementById("p5").innerHTML= "11% in Taxes"
-
-                    if (Aftertax > 30){
-
-                        Aftertax = Aftertax -5
-                        document.getElementById("p2").innerHTML= Aftertax + "$ After Tax and Shipping"
-
-                        document.getElementById("p3").innerHTML= "Free Shipping"
-
-                        document.getElementById("p4").innerHTML= "Is the 5$ discount Applied?: Yes!"
-
-                        document.getElementById("p5").innerHTML= "11% in Taxes"
-
-                    }
-                }
-
-                else if (document.getElementById("ab").checked){
-
-                    let Aftertax= (Total * 1.05)+ Shipping
-
-                    document.getElementById("p2").innerHTML=Aftertax + "$ After Tax and Shipping"
-
-                    document.getElementById("p3").innerHTML= Shipping + "$ in Shipping"
-
-                    document.getElementById("p4").innerHTML= "Is the 5$ discount Applied?: No"
-
-                    document.getElementById("p5").innerHTML= "5% in Taxes"
-                }
-
-
-                else if (document.getElementById("mb").checked){ 
-
-                    let Aftertax= (Total * 1.13)+ Shipping
-
-                    document.getElementById("p2").innerHTML=Aftertax + "$ After Tax and Shipping"
-
-                    document.getElementById("p3").innerHTML= Shipping + "$ in Shipping"
-
-                    document.getElementById("p4").innerHTML= "Is the 5$ discount Applied?: No"
-
-                    document.getElementById("p5").innerHTML= "13% in Taxes"
-                }
-
-                else {
-                    document.getElementById("p1").innerHTML= "Please select a shipping location"
-
-                    window.alert("Please select a location for shipping and taxes")
-
-                    document.getElementById("p4").innerHTML= "Is the 5$ discount Applied?: No"
-
-                    document.getElementById("p5").innerHTML= "No Province Selected"
-
-                    return
-                }
-   
+            if (total === 0) {
+                window.alert("You didn't order anything!");
+                document.getElementById('p1').innerText = 'Nothing was ordered';
+                document.getElementById('p2').innerText = '';
+                document.getElementById('p3').innerText = '';
+                document.getElementById('p4').innerText = '';
+                document.getElementById('p5').innerText = '';
+                return;
             }
 
+            document.getElementById('p1').innerText = `${total.toFixed(2)}$ Before Tax`;
 
+            let afterTax;
+            let shippingMessage = '';
+            let taxMessage = '';
+            let discountMessage = 'Is the 5$ discount applied?: No';
+            let discountApplied = false;
+
+           
+        }
     </script>
-      
- <table>
-
-        <tr>
-            <td>
-                
-
-            </td>
-
-
-
-        </tr>
-
-
-
- </table>
+</body>
+</html>
